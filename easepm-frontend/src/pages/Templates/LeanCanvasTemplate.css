@@ -1,0 +1,637 @@
+/* ==========================
+   Lean Canvas Template Styling
+============================= */
+
+/* Root styling variables */
+:root {
+  --primary-color: #00AEEF;
+  --secondary-color: #FF8C00;
+  --accent-color-1: #f5a623; /* Amber/Orange for headings */
+  --accent-color-2: #3ecbf5; /* Light blue for actions */
+  --text-color: #333;
+  --light-gray: #f5f5f5;
+  --border-color: #e0e0e0;
+  --background-gradient: linear-gradient(135deg, #e0f7fa 40%, #fdd7a8 60%);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Template Initial View - Matching Risk Register Style */
+.template-initial-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding: 2rem 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.template-content {
+  text-align: center;
+  max-width: 800px;
+  background-color: white;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.template-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--accent-color-1);
+  margin-bottom: 1.5rem;
+}
+
+.template-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.template-customize-btn {
+  background: linear-gradient(135deg, var(--primary-color), #008ecf);
+  color: white;
+  padding: 14px 24px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 174, 239, 0.4);
+  border: none;
+}
+
+.template-customize-btn:hover {
+  background: var(--secondary-color);
+  box-shadow: 0 6px 15px rgba(255, 140, 0, 0.4);
+  transform: scale(1.05);
+}
+
+/* Lean Canvas Container */
+.lean-canvas-container {
+  width: 95%;
+  max-width: 1400px;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.lean-canvas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--accent-color-1);
+  padding-bottom: 1rem;
+}
+
+.lean-canvas-header h2 {
+  color: var(--accent-color-1);
+  font-size: 2rem;
+  margin: 0;
+}
+
+.print-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--accent-color-2);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.print-btn:hover {
+  background-color: #2ab1dc;
+  transform: translateY(-2px);
+}
+
+/* Project Selection Container */
+.project-select-container {
+  background-color: #ebf8ff;
+  border-radius: 6px;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  border: 1px solid #cce9f1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.project-select-container label {
+  color: #0078a8;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.project-select {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+.project-select:focus {
+  border-color: var(--accent-color-2);
+  box-shadow: 0 0 0 3px rgba(62, 203, 245, 0.15);
+  outline: none;
+}
+
+/* Lean Canvas Grid Layout */
+.lean-canvas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Canvas Blocks - Grid Positioning */
+.problem-block {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.segments-block {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.uvp-block {
+  grid-column: 2 / span 2;
+  grid-row: 1;
+}
+
+.solution-block {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.channels-block {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.metrics-block {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+.cost-block {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+}
+
+.revenue-block {
+  grid-column: 3 / span 2;
+  grid-row: 3;
+}
+
+.advantage-block {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+/* Canvas Block Styling */
+.canvas-block {
+  background-color: white;
+  border: 2px solid var(--accent-color-1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  min-height: 250px;
+}
+
+.canvas-block:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.block-header {
+  background-color: var(--light-gray);
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.block-header h3 {
+  margin: 0;
+  color: var(--accent-color-1);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-tooltip {
+  position: relative;
+  color: var(--accent-color-2);
+  cursor: help;
+  display: inline-flex;
+  margin-left: 0.5rem;
+  z-index: 10;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 200px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 20;
+  bottom: 125%;
+  right: 0;
+  margin-bottom: 5px;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  font-weight: normal;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+.header-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.block-content {
+  padding: 1rem;
+  background-color: white;
+  flex-grow: 1;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Canvas Items Styling */
+.canvas-item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.canvas-special-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Form Controls */
+.form-input,
+.form-textarea,
+.form-select {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  border-color: var(--accent-color-2);
+  box-shadow: 0 0 0 3px rgba(62, 203, 245, 0.15);
+  outline: none;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Custom Selects with Options */
+.select-with-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.custom-input {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: -0.5rem;
+  border-top: none;
+}
+
+/* Button Styling */
+.add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--accent-color-2);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s, transform 0.2s;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.add-btn:hover {
+  background-color: #2ab1dc;
+  transform: translateY(-2px);
+}
+
+.remove-btn {
+  background-color: #ff5252;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+}
+
+.remove-btn:hover {
+  background-color: #ff1a1a;
+}
+
+/* Examples Section for UVP and Unfair Advantage */
+.uvp-examples,
+.advantage-examples {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.examples-header {
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: var(--accent-color-1);
+}
+
+.examples-list {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.examples-list li {
+  margin-bottom: 0.25rem;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.btn-save {
+  background: var(--accent-color-1);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(245, 166, 35, 0.3);
+  border: none;
+}
+
+.btn-save:hover {
+  background: #e29514;
+  box-shadow: 0 4px 8px rgba(245, 166, 35, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-cancel {
+  background: #e0e0e0;
+  color: #666;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+
+.btn-cancel:hover {
+  background: #d0d0d0;
+  color: #333;
+}
+
+/* Error and Success Messages */
+.error-text {
+  background-color: rgba(255, 77, 77, 0.1);
+  color: #d33;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  text-align: center;
+  font-weight: 500;
+}
+
+.success-text {
+  background-color: rgba(75, 181, 67, 0.1);
+  color: #4bb543;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(75, 181, 67, 0.3);
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Print Styles */
+@media print {
+  .navbar, 
+  .print-btn, 
+  .add-btn, 
+  .remove-btn, 
+  .form-actions,
+  .project-select-container {
+    display: none !important;
+  }
+  
+  .lean-canvas-container {
+    box-shadow: none;
+    border: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .lean-canvas-grid {
+    gap: 0.5rem;
+  }
+  
+  .canvas-block {
+    break-inside: avoid;
+    border: 1px solid #999;
+    box-shadow: none;
+  }
+  
+  .block-header {
+    background-color: white !important;
+  }
+  
+  .form-input, 
+  .form-textarea,
+  .form-select {
+    border: none;
+    padding: 0;
+    height: auto;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .lean-canvas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+  
+  .problem-block {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  .segments-block {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  
+  .uvp-block {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+  
+  .solution-block {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  
+  .advantage-block {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  
+  .channels-block {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  
+  .metrics-block {
+    grid-column: 2;
+    grid-row: 4;
+  }
+  
+  .cost-block {
+    grid-column: 1;
+    grid-row: 5;
+  }
+  
+  .revenue-block {
+    grid-column: 2;
+    grid-row: 5;
+  }
+}
+
+@media (max-width: 768px) {
+  .lean-canvas-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .problem-block,
+  .segments-block,
+  .uvp-block,
+  .solution-block,
+  .advantage-block,
+  .channels-block,
+  .metrics-block,
+  .cost-block,
+  .revenue-block {
+    grid-column: 1;
+  }
+  
+  .uvp-block {
+    grid-row: 3;
+  }
+  
+  .solution-block {
+    grid-row: 4;
+  }
+  
+  .advantage-block {
+    grid-row: 5;
+  }
+  
+  .channels-block {
+    grid-row: 6;
+  }
+  
+  .metrics-block {
+    grid-row: 7;
+  }
+  
+  .cost-block {
+    grid-row: 8;
+  }
+  
+  .revenue-block {
+    grid-row: 9;
+  }
+  
+  .lean-canvas-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .btn-save, 
+  .btn-cancel {
+    width: 100%;
+  }
+}
+
+/* Remove tooltip-related CSS */
+.header-tooltip:hover .tooltip-content {
+  visibility: visible !important;
+  opacity: 1 !important;
+}

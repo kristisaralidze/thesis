@@ -1,0 +1,178 @@
+/* Root container for the page */
+.view-wbs-container {
+  max-width: 100%;
+  margin: 40px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Title styling */
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #333;
+}
+
+/* --- READ-ONLY MODE STYLES (unchanged) --- */
+.wbs-readonly-list {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: flex-start;  /* Align items at the top */
+  gap: 30px;                /* Space between main elements */
+  list-style: none;
+  padding: 20px;
+}
+
+/* Each main category in read-only */
+.wbs-readonly-list > li {
+  background-color: #f0f8ff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  font-weight: 600;
+  min-width: 250px;
+  text-align: center;
+  border-left: 5px solid #007bff;
+}
+
+/* Sub-elements in read-only */
+.wbs-readonly-list li ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  padding: 0;
+  gap: 10px;
+}
+
+/* Sub-items in read-only */
+.wbs-readonly-list li ul li {
+  background-color: #e3f2fd;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: 500;
+  min-width: 200px;
+  border-left: 4px solid #00aaff;
+}
+
+/* --- EDIT MODE STYLES --- */
+
+/* A container that mimics your “customization-section” from WBSTreeTemplate */
+.customization-section {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  text-align: left; /* or center if you prefer */
+}
+
+/* This is the UL used in edit mode for the draggable items */
+.wbs-edit-ul {
+  list-style: none;
+  margin: 20px 0 0 40px; /* Indent the list a bit */
+  padding: 0;
+}
+
+/* A single node in edit mode */
+.wbs-node-editor {
+  margin: 10px 0;
+}
+
+/* The row with input and buttons */
+.wbs-node-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* The input for the node title */
+.wbs-node-input {
+  font-size: 1rem;
+  padding: 4px;
+  min-width: 200px;
+}
+
+/* Indent children nodes inside an item */
+.wbs-children {
+  margin-left: 40px;
+  margin-top: 8px;
+}
+
+/* Error text if any */
+.error-text {
+  color: red;
+}
+
+/* Buttons in the edit mode form */
+.form-actions {
+  margin-top: 20px;
+}
+
+/* Reuse the “btn-save” and “btn-cancel” from your template for consistency */
+.btn-save,
+.btn-cancel {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.btn-save {
+  background-color: #007bff;
+}
+
+.btn-cancel {
+  background-color: #6c757d;
+}
+
+.btn-save:hover {
+  background-color: #0056b3;
+}
+
+.btn-cancel:hover {
+  background-color: #5a6268;
+}
+
+/* Buttons used in read-only mode for “Edit” and “Back” */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #ff9800;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary:hover {
+  background-color: #e68900;
+}

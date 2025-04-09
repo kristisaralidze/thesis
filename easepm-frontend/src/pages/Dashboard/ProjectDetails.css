@@ -1,0 +1,685 @@
+/* ProjectDetails.css */
+
+/* Root styling variables - Match Dashboard */
+:root {
+    --primary-color: #3ecbf5;
+    --secondary-color: #f5a623;
+    --text-color: #333;
+    --light-text: #666;
+    --background-color: #ffffff;
+    --card-bg: #ffffff;
+    --light-bg: #f8f9fa;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-color: #eaeaea;
+    --box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    --primary-gradient: linear-gradient(135deg, #3ecbf5 0%, #3ecbf5 100%);
+    --secondary-gradient: linear-gradient(135deg, #f5a623 0%, #f5a623 100%);
+    --mixed-gradient: linear-gradient(135deg, #3ecbf5 0%, #f5a623 100%);
+    --navbar-height: 70px;
+    --progress-color: #3ecbf5;
+    --completed-color: #3ecbf5;
+    --overdue-color: #f5a623;
+    --in-progress-color: #3ecbf5;
+    --not-started-color: #999;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    background: white;
+}
+
+/* Main container - Match Dashboard container */
+.project-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background: var(--background-color);
+    padding: 80px 20px 60px; /* Consistent with Dashboard */
+    box-sizing: border-box;
+}
+
+/* Header Styling - Consistent with Dashboard */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Match Dashboard max-width */
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.project-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.project-dates {
+    font-size: 1rem;
+    color: var(--light-text);
+    margin: 5px 0 0;
+}
+
+/* Button styling consistent with Dashboard */
+.edit-project-btn, .delete-project-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-project-btn {
+    background-color: var(--primary-color);
+    color: white;
+    margin-right: 10px;
+    box-shadow: 0 4px 10px rgba(62, 203, 245, 0.3);
+}
+
+.edit-project-btn:hover {
+    background-color: #26b5df;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(62, 203, 245, 0.4);
+}
+
+.delete-project-btn {
+    background-color: #f5f5f5;
+    color: #d33;
+    border: 1px solid #eee;
+}
+
+.delete-project-btn:hover {
+    background-color: #f8e8e8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* KPI Section - Match Dashboard KPI section */
+.project-kpi-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 0 30px;
+}
+
+.project-kpi-card {
+    flex: 1;
+    min-width: 180px;
+    max-width: 240px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 24px 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    cursor: pointer;
+    border-bottom: 4px solid transparent;
+}
+
+.project-kpi-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--primary-gradient);
+    opacity: 0.8;
+}
+
+.project-kpi-card:nth-child(2n)::before {
+    background: var(--secondary-gradient);
+}
+
+.project-kpi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.project-kpi-card.kpi-card-active {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+    background: var(--light-bg);
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.project-kpi-card:nth-child(2n).kpi-card-active {
+    border-bottom-color: var(--secondary-color);
+}
+
+.project-kpi-card h4 {
+    font-size: 0.85rem;
+    color: var(--light-text);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.project-kpi-card p {
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin: 0;
+    font-weight: 700;
+}
+
+/* KPI Icon styling */
+.kpi-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.project-kpi-card:nth-child(2n) .kpi-icon {
+    color: var(--secondary-color);
+}
+
+.project-kpi-card:hover .kpi-icon {
+    transform: scale(1.1);
+}
+
+/* Circular Progress */
+.circular-progress-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 10px;
+}
+
+.circular-progress {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: conic-gradient(var(--progress-color) var(--progress), #f0f0f0 0);
+}
+
+.circular-progress::before {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.progress-value {
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Active KPI indicator */
+.active-kpi-indicator {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: rgba(62, 203, 245, 0.1);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    margin: 0 0 30px;
+    font-weight: 500;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: center;
+}
+
+.clear-kpi-btn {
+    background: none;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.clear-kpi-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Tabs Section - Modernized */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tab {
+    background: transparent;
+    padding: 15px 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    color: var(--light-text);
+    position: relative;
+}
+
+.tab:hover {
+    color: var(--primary-color);
+}
+
+.tab.active {
+    color: var(--primary-color);
+}
+
+.tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* Content Sections */
+.deliverables-section, .documentation-section {
+    background: var(--card-bg);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 30px;
+}
+
+.deliverables-section h3, .documentation-section h3 {
+    color: var(--text-color);
+    font-size: 1.7rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.deliverables-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* Deliverable Items */
+.deliverable-list {
+    list-style: none;
+    padding: 0;
+}
+
+.deliverable-item {
+    padding: 20px 25px;
+    background: var(--light-bg);
+    margin-bottom: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    transition: all 0.3s ease;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.deliverable-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.deliverable-info {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex: 1;
+}
+
+.deliverable-title {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin: 0;
+    font-weight: 600;
+    min-width: 220px;
+    max-width: 320px;
+}
+
+.deliverable-status {
+    font-size: 1rem;
+    color: var(--light-text);
+    margin: 0;
+    min-width: 140px;
+}
+
+.deliverable-status span {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.deliverable-date {
+    font-size: 1rem;
+    color: var(--light-text);
+    margin: 0;
+    min-width: 180px;
+}
+
+.deliverable-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.edit-btn, .delete-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.edit-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #26b5df;
+}
+
+.delete-btn {
+    background-color: #f5f5f5;
+    color: #d33;
+}
+
+.delete-btn:hover {
+    background-color: #f8e8e8;
+}
+
+/* Add Deliverable Button */
+.add-deliverable-btn {
+    display: block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 30px auto 10px;
+    box-shadow: 0 4px 10px rgba(62, 203, 245, 0.3);
+}
+
+.add-deliverable-btn:hover {
+    background-color: #26b5df;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(62, 203, 245, 0.4);
+}
+
+/* Documentation Section */
+.documentation-list {
+    list-style: none;
+    padding: 0;
+}
+
+.document-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    background: var(--light-bg);
+    margin-bottom: 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border-left: 5px solid var(--secondary-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.document-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.document-title {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin: 0;
+    font-weight: 600;
+    min-width: 300px;
+}
+
+.document-dates {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 4px 0;
+}
+
+.document-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.view-btn, .delete-doc-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.view-btn {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.view-btn:hover {
+    background-color: #e69200;
+}
+
+.delete-doc-btn {
+    background-color: #f5f5f5;
+    color: #d33;
+}
+
+.delete-doc-btn:hover {
+    background-color: #f8e8e8;
+}
+
+.documentation-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+/* No deliverables message */
+.no-deliverables-message {
+    text-align: center;
+    padding: 30px;
+    color: var(--light-text);
+    font-size: 1.1rem;
+    margin: 20px 0;
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.empty-deliverables-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    border: 2px dashed var(--border-color);
+    border-radius: 10px;
+    margin: 20px 0;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.empty-state-hint {
+    color: var(--light-text);
+    font-size: 0.95rem;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Media queries */
+@media (max-width: 1024px) {
+    .project-kpi-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 90%;
+    }
+    
+    .project-kpi-card {
+        min-width: 160px;
+        max-width: none;
+        flex: 0 0 calc(50% - 20px);
+    }
+    
+    .deliverables-section, .documentation-section {
+        width: 90%;
+    }
+    
+    .document-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .document-buttons {
+        margin-top: 15px;
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 600px) {
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .upper-buttons {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .project-kpi-row {
+        flex-direction: column;
+    }
+    
+    .project-kpi-card {
+        max-width: none;
+        width: 100%;
+    }
+    
+    .tabs-container {
+        flex-wrap: wrap;
+    }
+    
+    .tab {
+        flex: 1 0 auto;
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .deliverable-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .deliverable-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    
+    .deliverable-title, 
+    .deliverable-status, 
+    .deliverable-date {
+        min-width: unset;
+        width: 100%;
+    }
+    
+    .deliverable-buttons {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+/* Loading and Error States */
+.loading-container, .error-container {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    padding: 40px 0;
+    border-radius: 12px;
+    background-color: var(--light-bg);
+    margin-top: 20px;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(62, 203, 245, 0.2);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.error-text {
+    color: var(--secondary-color);
+    font-weight: 600;
+}

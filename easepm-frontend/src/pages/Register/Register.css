@@ -1,0 +1,268 @@
+/* Register.css */
+
+:root {
+    --primary-color: #00AEEF;
+    --secondary-color: #FF8C00;
+    --text-color: #333;
+    --background-gradient: linear-gradient(135deg, #e0f7fa 40%, #fdd7a8 60%);
+    --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --border-radius: 12px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+  
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background: var(--background-gradient);
+    background-size: cover; /* Ensures background scales properly */
+    background-position: center; /* Centers background */
+    position: relative;
+    overflow: hidden; /* Keep decorative elements contained */
+}
+
+/* Decorative elements */
+.decorative-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.circle1 {
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 174, 239, 0.1);
+    top: -100px;
+    left: -100px;
+}
+
+.circle2 {
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 140, 0, 0.1);
+    bottom: -50px;
+    right: -50px;
+}
+
+.decorative-shape {
+    position: absolute;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.shape1 {
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 174, 239, 0.2);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    top: 20%;
+    left: 10%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.shape2 {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 140, 0, 0.2);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    bottom: 15%;
+    right: 15%;
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+  
+ /* Register Box */
+.register-box {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    width: 90%; /* Responsive */
+    max-width: 400px; /* Prevents stretching */
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+  
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+  
+.text-blue {
+    color: var(--primary-color);
+}
+  
+.text-orange {
+    color: var(--secondary-color);
+}
+  
+.register-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+  
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+  
+.success-message {
+    background-color: rgba(62, 203, 245, 0.1);
+    border: 2px solid #3ecbf5;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.success-message p {
+    color: #3ecbf5;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.success-icon {
+    background-color: #3ecbf5;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+  
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+  
+label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: left;
+}
+  
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+  
+input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 174, 239, 0.3);
+}
+  
+/* Register Button */
+.register-button {
+    background: linear-gradient(to right, var(--primary-color), #2cc0ff);
+    color: #fff;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+  
+.register-button:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+  
+/* Login Text */
+.login-text {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+  
+.login-button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out;
+}
+  
+.login-button:hover {
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+  
+@media (max-width: 768px) {
+    .register-box {
+        width: 90%;
+        padding: 30px;
+    }
+}
+  
+.registration-status {
+  background-color: #f8f9fa;
+  border-left: 4px solid #3ecbf5;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+  

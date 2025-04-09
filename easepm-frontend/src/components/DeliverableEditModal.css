@@ -1,0 +1,171 @@
+/* This file can share styles with DeliverableModal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease-in-out;
+}
+
+.modal-container h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+/* Form Elements */
+.modal-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-container label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+.modal-container input,
+.modal-container select {
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.modal-container input:focus,
+.modal-container select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Status and error messages */
+.error-text {
+    color: #e74c3c;
+    padding: 8px 12px;
+    background-color: #fef0f0;
+    border-left: 4px solid #e74c3c;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    font-size: 0.9rem;
+}
+
+.status-text {
+    color: #3498db;
+    padding: 8px 12px;
+    background-color: #f0f9ff;
+    border-left: 4px solid #3498db;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* Button Row */
+.button-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Cancel Button */
+.button-row button:first-child {
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.button-row button:first-child:hover {
+    background-color: #bbb;
+}
+
+/* Submit (Save) Button */
+.button-row button:last-child {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.button-row button:last-child:hover {
+    background-color: #008ecf;
+}
+
+/* Small loading spinner for buttons */
+.loading-spinner-small {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .modal-container {
+        width: 95%;
+        max-width: 350px;
+        padding: 20px;
+    }
+}

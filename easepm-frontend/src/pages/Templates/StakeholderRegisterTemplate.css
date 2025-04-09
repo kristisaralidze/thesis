@@ -1,0 +1,258 @@
+/* Styles for the initial template view */
+.template-initial-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: 8px;
+  background-color: rgba(62, 203, 245, 0.1);
+  box-shadow: 0 4px 6px rgba(62, 203, 245, 0.2);
+}
+
+.template-content {
+  width: 100%;
+  max-width: 600px;
+}
+
+.template-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f5a623;
+  margin-bottom: 1.5rem;
+}
+
+.template-description {
+  font-size: 1.125rem;
+  color: #333;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.template-customize-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #3ecbf5;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 1rem;
+}
+
+.template-customize-btn:hover {
+  background-color: #f5a623;
+}
+
+/* Customization form styling */
+.customization-section {
+  padding: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.customization-section h2 {
+  color: #f5a623;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.customization-section > p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stakeholder-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #f5a623;
+}
+
+.project-select {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 12px;
+  border: 2px solid #3ecbf5;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.project-select:focus {
+  outline: none;
+  border-color: #f5a623;
+}
+
+/* Main content layout - Modified for full width stacked components */
+.main-content-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.stakeholder-register-section,
+.stakeholder-matrix-section {
+  width: 100%;
+}
+
+/* Make placeholder containers taller */
+.placeholder-container {
+  border: 2px dashed #3ecbf5;
+  border-radius: 8px;
+  padding: 30px;
+  background-color: rgba(62, 203, 245, 0.05);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* Section header styling - more prominent for full-width sections */
+.section-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(62, 203, 245, 0.3);
+  padding-bottom: 0.75rem;
+}
+
+.section-header h3 {
+  color: #f5a623;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Placeholder styling */
+.placeholder-content {
+  text-align: center;
+  max-width: 80%;
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.placeholder-content p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f5a623;
+  margin-bottom: 0.5rem;
+}
+
+.placeholder-description {
+  font-size: 0.9rem !important;
+  font-weight: normal !important;
+  color: #666 !important;
+}
+
+/* Form actions - Updated with new classes and styles */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(62, 203, 245, 0.3);
+}
+
+.stakeholder-btn-save {
+  background-color: #f5a623;
+  color: white;
+  border: 2px solid #f5a623;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(245, 166, 35, 0.3);
+}
+
+.stakeholder-btn-save:hover {
+  background-color: white;
+  color: #f5a623;
+}
+
+.stakeholder-btn-save:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(245, 166, 35, 0.3);
+}
+
+.stakeholder-btn-cancel {
+  background-color: #3ecbf5;
+  color: white;
+  border: 2px solid #3ecbf5;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(62, 203, 245, 0.3);
+}
+
+.stakeholder-btn-cancel:hover {
+  background-color: white;
+  color: #3ecbf5;
+}
+
+.stakeholder-btn-cancel:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(62, 203, 245, 0.3);
+}
+
+/* Error and success messages */
+.error-text {
+  color: #f5a623;
+  background-color: rgba(245, 166, 35, 0.1);
+  border: 1px solid #f5a623;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.success-text {
+  color: #3ecbf5;
+  background-color: rgba(62, 203, 245, 0.1);
+  border: 1px solid #3ecbf5;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.btn-add-stakeholder {
+  background-color: #f5a623 !important;
+  color: white !important;
+  padding: 8px 16px !important;
+  border: none !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  font-weight: 500 !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.btn-add-stakeholder:hover {
+  background-color: #e69512 !important;
+}

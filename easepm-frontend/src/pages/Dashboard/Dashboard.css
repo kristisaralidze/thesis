@@ -1,0 +1,265 @@
+/* Dashboard.css */
+
+/* Dashboard-specific CSS variables */
+.dashboard-container {
+  /* Colors */
+  --primary-color: #3ecbf5;
+  --secondary-color: #f5a623;
+  --text-color: #333;
+  --light-text: #666;
+  --card-bg: #ffffff;
+  --light-bg: #f8f9fa;
+  --border-color: #eaeaea;
+  --box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  --hover-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  --primary-gradient: linear-gradient(135deg, #3ecbf5 0%, #3ecbf5 100%);
+  --secondary-gradient: linear-gradient(135deg, #f5a623 0%, #f5a623 100%);
+  --mixed-gradient: linear-gradient(135deg, #3ecbf5 0%, #f5a623 100%);
+
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 20px 60px; /* Adjusted top padding to account for navbar */
+  background: white;
+}
+
+/* Global resets */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background: white;
+}
+
+/* KPI Section */
+.kpi-section {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin: 0 0 30px; /* Removed top margin as header is gone */
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Each KPI card */
+.kpi-card {
+  flex: 1;
+  min-width: 180px;
+  max-width: 240px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 24px 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+  border-bottom: 4px solid transparent;
+}
+
+.kpi-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-gradient);
+  opacity: 0.8;
+}
+
+.kpi-card:nth-child(2n)::before {
+  background: var(--secondary-gradient);
+}
+
+.kpi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+.kpi-card-active {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+  background: var(--light-bg);
+  border-bottom: 4px solid var(--primary-color);
+}
+
+.kpi-card:nth-child(2n).kpi-card-active {
+  border-bottom-color: var(--secondary-color);
+}
+
+/* Icon styling */
+.kpi-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.kpi-card:nth-child(2n) .kpi-icon {
+  color: var(--secondary-color);
+}
+
+.kpi-card:hover .kpi-icon {
+  transform: scale(1.1);
+}
+
+/* KPI label */
+.kpi-card h5 {
+  font-size: 0.85rem;
+  color: var(--light-text);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+/* KPI value */
+.kpi-card h4 {
+  font-size: 2.2rem;
+  color: var(--text-color);
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Filter indicator */
+.active-filter-indicator {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: rgba(62, 203, 245, 0.1);
+  color: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  margin: 0 0 30px;
+  font-weight: 500;
+}
+
+.clear-filter-btn {
+  background: none;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.clear-filter-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* New Project Button */
+.btn-new-project {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 14px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 10px rgba(62, 203, 245, 0.3);
+}
+
+.btn-new-project:hover {
+  background-color: #26b5df;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(62, 203, 245, 0.4);
+}
+
+/* Project Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Loading and Error States */
+.loading-container, .error-container, .no-projects-container {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  padding: 40px 0;
+  border-radius: 12px;
+  background-color: var(--light-bg);
+  margin-top: 20px;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(62, 203, 245, 0.2);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-text {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.no-projects-message {
+  color: var(--light-text);
+  font-size: 1.1rem;
+  padding: 0 20px;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .dashboard-container {
+    padding-top: 80px;
+  }
+  
+  .kpi-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+  }
+  
+  .kpi-card {
+    min-width: 160px;
+    max-width: none;
+    flex: 0 0 calc(50% - 20px);
+  }
+  
+  .project-grid {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .kpi-section {
+    flex-direction: column;
+  }
+  
+  .kpi-card {
+    max-width: none;
+    flex: none;
+    width: 100%;
+  }
+}
+  

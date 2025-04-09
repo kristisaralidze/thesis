@@ -1,0 +1,277 @@
+/**
+ * ForecastingView Component Styles
+ */
+
+.forecasting-view {
+  width: 100%;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+}
+
+/* Forecast Metrics Section */
+.forecast-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+}
+
+.metric-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  flex: 1;
+  min-width: 250px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.metric-card h4 {
+  font-size: 16px;
+  margin: 0 0 15px 0;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.forecast-value {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 15px 0;
+  color: #333;
+}
+
+.forecast-value.under-budget {
+  color: #3ecbf5; /* Blue for under budget */
+}
+
+.forecast-value.over-budget {
+  color: #f5a623; /* Orange for over budget */
+}
+
+.calculation-formula {
+  font-family: monospace;
+  padding: 8px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.calculation-note {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+  text-align: center;
+  font-style: italic;
+}
+
+/* EAC Bar Chart Visualization */
+.eac-visualization {
+  margin-top: 30px;
+}
+
+.eac-visualization h4 {
+  font-size: 16px;
+  margin: 0 0 15px 0;
+  color: #333;
+}
+
+.eac-chart-container {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  padding: 30px 0;
+}
+
+.eac-bar-chart {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.bar-container {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.eac-bar {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ac-portion {
+  height: 100%;
+  background-color: #3ecbf5;
+  position: relative;
+}
+
+.etc-portion {
+  height: 100%;
+  background-color: rgba(62, 203, 245, 0.5);
+  position: relative;
+}
+
+.over-budget-portion {
+  height: 100%;
+  background-color: #f5a623;
+  position: relative;
+}
+
+/* Budget Reference Line */
+.bac-reference-line {
+  position: absolute;
+  top: 0;
+  height: 65px;
+  width: 2px;
+  background-color: #000;
+  z-index: 10;
+}
+
+.bac-label {
+  position: absolute;
+  top: -25px;
+  left: -15px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* EAC Label */
+.eac-label {
+  position: absolute;
+  top: 50px;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  background: #3ecbf5;
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.eac-label.over-budget {
+  background: #f5a623;
+}
+
+.eac-label:after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #3ecbf5;
+}
+
+.eac-label.over-budget:after {
+  border-bottom-color: #f5a623;
+}
+
+/* Scale Markers */
+.scale-markers {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+}
+
+.scale-marker {
+  position: absolute;
+  height: 8px;
+  width: 1px;
+  background-color: #ccc;
+  bottom: 20px;
+}
+
+.scale-label {
+  position: absolute;
+  bottom: -20px;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #666;
+}
+
+/* Tooltips for bar sections */
+[data-tooltip]:hover:before {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 12px;
+  z-index: 100;
+}
+
+/* Placeholder for no data */
+.forecast-placeholder {
+  width: 100%;
+  height: 400px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9;
+}
+
+.placeholder-content {
+  text-align: center;
+  padding: 30px;
+}
+
+.placeholder-icon {
+  font-size: 48px;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.placeholder-content p {
+  margin: 10px 0;
+  color: #666;
+}
+
+.placeholder-subtext {
+  font-size: 14px;
+  color: #999;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .forecast-metrics {
+    flex-direction: column;
+  }
+  
+  .metric-card {
+    width: 100%;
+  }
+  
+  .eac-chart-container {
+    height: 150px;
+  }
+} 

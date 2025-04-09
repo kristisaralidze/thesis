@@ -1,0 +1,17 @@
+.react-flow__handle {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Reset button inside container */
+.reset-layout-btn {
+  background: #3ecbf5; /* Primary color */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}

@@ -1,0 +1,148 @@
+/**
+ * ProgressGauge Component Styles
+ *
+ * Color Scheme:
+ * - Primary Blue: #3ecbf5
+ * - Primary Orange: #f5a623
+ * - Background: #f0f0f0
+ * - Text: #333333
+ */
+
+/* Container Styles
+   ---------------
+   Sets up the main container for the gauge with relative positioning
+   for proper tooltip placement and responsive sizing
+*/
+.progress-gauge-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  padding: 20px;
+}
+
+/* Gauge Element Styles
+   -------------------
+   Defines the core gauge visualization area with proper dimensions
+   and positioning for the D3.js rendered content
+*/
+.gauge {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SVG Element Styles
+   -----------------
+   Ensures proper rendering of SVG elements and smooth animations
+*/
+.gauge svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  max-height: 300px;
+}
+
+.gauge-background {
+  transition: fill 0.3s ease;
+}
+
+.gauge-fill {
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(62, 203, 245, 0.2));
+}
+
+/* Text Element Styles
+   ------------------
+   Typography and positioning for percentage and status text
+*/
+.gauge-text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+}
+
+.gauge-status {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Tooltip Styles
+   -------------
+   Interactive tooltip that appears on hover with detailed information
+*/
+.gauge-tooltip {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: opacity 0.2s ease;
+  z-index: 1000;
+  max-width: 200px;
+  box-shadow: 0 2px 4px rgba(62, 203, 245, 0.1);
+  color: #333333;
+}
+
+.tooltip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tooltip-content div {
+  white-space: nowrap;
+}
+
+/* Animation Keyframes
+   -----------------
+   Custom animations for enhanced visual feedback
+*/
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive Design
+   ---------------
+   Adjustments for different screen sizes to maintain readability
+*/
+@media (max-width: 768px) {
+  .progress-gauge-container {
+    min-height: 150px;
+  }
+
+  .gauge-tooltip {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+/* High Contrast & Accessibility
+   ---------------------------
+   Ensures the component is accessible to all users
+*/
+@media (prefers-reduced-motion: reduce) {
+  .gauge-fill {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .gauge-tooltip {
+    border: 2px solid #3ecbf5;
+    background: #ffffff;
+  }
+} 

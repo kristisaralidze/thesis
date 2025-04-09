@@ -1,0 +1,251 @@
+/* Color Variables */
+:root {
+  --primary-blue: #3ecbf5;
+  --primary-orange: #f5a623;
+  --blue-light: rgba(62, 203, 245, 0.2);
+  --blue-medium: rgba(62, 203, 245, 0.5);
+  --orange-light: rgba(245, 166, 35, 0.2);
+  --orange-medium: rgba(245, 166, 35, 0.5);
+}
+
+/* Form Sections */
+.form-section {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-section h2 {
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--blue-light);
+}
+
+/* Form Grids */
+.expense-grid,
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  background: var(--blue-light);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Form Input Groups */
+.input-group {
+  margin-bottom: 16px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px var(--blue-light);
+  outline: none;
+}
+
+/* Add Button */
+.add-button {
+  background: var(--primary-blue);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+  margin-top: 10px;
+}
+
+.add-button:hover {
+  background: var(--blue-medium);
+  transform: translateY(-2px);
+}
+
+/* Tables */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.data-table th {
+  background: var(--blue-light);
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid var(--primary-blue);
+}
+
+.data-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.data-table tbody tr:hover {
+  background-color: var(--blue-light);
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-button,
+.remove-button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.edit-button {
+  background: var(--blue-light);
+  color: var(--primary-blue);
+  border: 1px solid var(--primary-blue);
+}
+
+.remove-button {
+  background: var(--orange-light);
+  color: var(--primary-orange);
+  border: 1px solid var(--primary-orange);
+}
+
+.edit-button:hover,
+.remove-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Section Headers */
+.expense-section h2,
+.resource-section h2 {
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--blue-light);
+}
+
+/* Analytics Sections */
+.expense-section,
+.resource-section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Template Specific Styles */
+.template-initial-view {
+  text-align: center;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.template-customize-btn {
+  background: var(--primary-blue);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.template-customize-btn:hover {
+  background: var(--blue-medium);
+  transform: translateY(-2px);
+}
+
+/* Form Buttons */
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.btn-save,
+.btn-cancel {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-save {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+}
+
+.btn-cancel {
+  background: var(--orange-light);
+  color: var(--primary-orange);
+  border: 1px solid var(--primary-orange);
+}
+
+.btn-save:hover,
+.btn-cancel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .expense-grid,
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-buttons {
+    flex-direction: column;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+}

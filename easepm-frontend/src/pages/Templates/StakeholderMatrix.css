@@ -1,0 +1,197 @@
+.stakeholder-matrix-container {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.matrix-title {
+  text-align: center;
+  color: #f5a623;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.matrix-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+.matrix-grid {
+  position: relative;
+  background: white;
+  border: 2px solid #3ecbf5;
+}
+
+/* Grid Lines */
+.grid-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-line {
+  position: absolute;
+  background-color: rgba(62, 203, 245, 0.2);
+}
+
+.grid-line.horizontal {
+  width: 100%;
+  height: 1px;
+}
+
+.grid-line.vertical {
+  height: 100%;
+  width: 1px;
+}
+
+/* Axis Labels */
+.x-axis-label, .y-axis-label {
+  color: #3ecbf5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.x-axis-label {
+  margin-top: 20px;
+}
+
+.y-axis-label {
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: rotate(-90deg) translateX(50%);
+}
+
+/* Axis Values */
+.axis-values {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.x-axis-value, .y-axis-value {
+  position: absolute;
+  color: #3ecbf5;
+  font-size: 0.8rem;
+}
+
+.x-axis-value {
+  bottom: -25px;
+  transform: translateX(-50%);
+}
+
+.y-axis-value {
+  left: -25px;
+  transform: translateY(-50%);
+}
+
+/* Quadrant Labels */
+.quadrant-labels {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.quadrant-label {
+  position: absolute;
+  color: #f5a623;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.quadrant-label.top-left {
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.quadrant-label.top-right {
+  top: 25%;
+  right: 25%;
+  transform: translate(50%, -50%);
+}
+
+.quadrant-label.bottom-left {
+  bottom: 25%;
+  left: 25%;
+  transform: translate(-50%, 50%);
+}
+
+.quadrant-label.bottom-right {
+  bottom: 25%;
+  right: 25%;
+  transform: translate(50%, 50%);
+}
+
+/* Stakeholder Icons */
+.stakeholder-icon {
+  position: absolute;
+  background-color: #3ecbf5;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stakeholder-icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+/* Tooltip */
+.stakeholder-tooltip {
+  position: absolute;
+  visibility: hidden;
+  background-color: white;
+  border: 1px solid #3ecbf5;
+  border-radius: 4px;
+  padding: 8px;
+  width: 200px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stakeholder-icon:hover .stakeholder-tooltip {
+  visibility: visible;
+}
+
+.tooltip-name {
+  font-weight: bold;
+  color: #f5a623;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+.tooltip-details {
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.tooltip-details > div {
+  margin: 2px 0;
+}
+
+.tooltip-quadrant {
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid #eee;
+  color: #f5a623;
+  font-weight: 500;
+} 

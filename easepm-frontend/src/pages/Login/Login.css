@@ -1,0 +1,259 @@
+/* Login.css */
+
+/* Root styling variables */
+:root {
+    --primary-color: #00AEEF;
+    --secondary-color: #FF8C00;
+    --text-color: #333;
+    --background-gradient: linear-gradient(135deg, #e0f7fa 40%, #fdd7a8 60%);
+    --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --border-radius: 12px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fullscreen background and centered content with animation */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: var(--background-gradient);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative elements */
+.decorative-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.circle1 {
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 174, 239, 0.1);
+    top: -100px;
+    left: -100px;
+}
+
+.circle2 {
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 140, 0, 0.1);
+    bottom: -50px;
+    right: -50px;
+}
+
+.decorative-shape {
+    position: absolute;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.shape1 {
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 174, 239, 0.2);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    top: 20%;
+    left: 10%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.shape2 {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 140, 0, 0.2);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    bottom: 15%;
+    right: 15%;
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Login Box with fade-in animation */
+.login-box {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    animation: fadeInUp 1s ease-in-out;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo */
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.text-blue {
+    color: var(--primary-color);
+}
+
+.text-orange {
+    color: var(--secondary-color);
+}
+
+/* Title with fade-in animation */
+.login-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Error Message */
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* Login Form with staggered fade-in animation */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 174, 239, 0.3);
+}
+
+/* Login Button with hover effect */
+.login-button-in-login {
+    background: linear-gradient(to right, var(--secondary-color), #ffaa40);
+    color: #fff;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-button-in-login:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Register Redirect */
+.register-text {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.register-button-in-login {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out;
+}
+
+.register-button-in-login:hover {
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-box {
+        width: 90%;
+        padding: 30px;
+    }
+}
+
+/* Add this at the end of your Login.css file */
+
+.login-status {
+  background-color: #f8f9fa;
+  border-left: 4px solid #3ecbf5;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
